@@ -1,24 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example-nginx
+  name: appdirect
   labels:
-    app: example
-    component: nginx
+    app: appdirect
 spec:
   selector:
     matchLabels:
-      app: example
-      component: nginx
+      app: appdirect
   template:
     metadata:
       labels:
-        app: example
-        component: nginx
+        app: appdirect
     spec:
       containers:
-        - name: nginx
-          image: nginx
+        - name: appdirect
+          image: gcr.io/smar-proxy-839/cremerfc/appdirect
           envFrom:
           - configMapRef:
               name: example-config
